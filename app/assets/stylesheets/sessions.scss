@@ -1,3 +1,34 @@
-// Place all the styles related to the sessions controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.header {
+  height: 100px;
+  background-color: #3b5998;
+}
+.title {
+  color: #fff;
+  padding-left: 200px;
+  padding-top: 20px;
+  display: block;
+  float: left;
+}
+.login_user {
+  display: block;
+  float: right;
+  padding-right: 200px;
+  padding-top: 55px;
+  font-size: 20px;
+  color: #fff;
+}
+.login_user a:link,a:visited {
+  text-decoration: none;
+  color: #fff;
+}
+.footer {
+  background-color: #fff;
+	width:100%;
+	height: 50px;
+	position: absolute;
+	bottom: 0px;
+	padding: 10px 0;
+}
+.footer p {
+  text-align: center;
+}
