@@ -1,0 +1,19 @@
+<h1>投稿一覧</h1>
+
+<table>
+  <tr>
+    <th>PHOTO</th>
+    <th>一言</th>
+    <th>投稿者</th>
+  </tr>
+
+<% @articles.each do |article| %>
+  <tr>
+    <td><%= image_tag article.image.url %></td>
+    <td><%= article.content %></td>
+    <td><%= article.user_id %></td>
+
+    <td><%= link_to '詳細を確認する', article_path(article.id) %></td>
+  </tr>
+<% end %>
+</table>

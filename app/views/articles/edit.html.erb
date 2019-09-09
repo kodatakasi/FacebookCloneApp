@@ -1,0 +1,18 @@
+
+
+<%= form_with(model: @article, local: true) do |form| %>
+  <div class="field">
+    <%= form.label :image %>
+    <%= image_tag @article.image.url %>
+    <%= form.file_field :image %>
+    <%= form.hidden_field :image_cache %>
+  </div>
+  <div class="article_content">
+    <%= form.label :content %>
+    <%= form.text_field :content %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<%= link_to '削除', article_path(@article), method: :delete %>
+<%= link_to 'Back', articles_path %>
