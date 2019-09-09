@@ -3,6 +3,20 @@
 <p>メールアドレス: <%= @user.email %></p>
 
 <%= form_with(model: @article, local: true) do |form| %>
+  <% if @article.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= @article.errors.count %>件のエラーがあります。</h2>
+      <ul>
+
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<% end %>
+
+<%= form_with(model: @article, local: true, url: confirm_articles_path) do |form| %>
   <div class="field">
     <%= form.label :image %>
     <%= form.file_field :image %>

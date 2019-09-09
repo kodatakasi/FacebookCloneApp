@@ -6,10 +6,15 @@ class ArticlesController < ApplicationController
 
   def create
     @article = Article.new(article_params)
-    if @article.save!
-      redirect_to articles_path
+    if params[:back]
+      rener :new
     else
-      render new_article_path
+      if @article.save
+        redirect_to articles_path
+      else
+        @user = User.find_by(params[:id])
+        render new_article_path
+      end
     end
   end
 
@@ -33,6 +38,10 @@ class ArticlesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def confirm
+    @article = Article.new(article_params)
   end
 
   def destroy
