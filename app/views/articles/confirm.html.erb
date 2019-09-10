@@ -5,6 +5,7 @@
   <%= form.hidden_field :content %>
   <%= form.hidden_field :image_cache %>
 
+  <%= image_tag @article.image.url %>
   <p>image:<%= @article.image %></p>
   <p>コメント:<%= @article.content %></p>
   <%= form.submit  "登録する" %>
