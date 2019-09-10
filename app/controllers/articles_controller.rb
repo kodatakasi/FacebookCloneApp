@@ -1,4 +1,5 @@
 class ArticlesController < ApplicationController
+  
   def index
     @articles = Article.all
     @user = User.find_by(params[:id])
