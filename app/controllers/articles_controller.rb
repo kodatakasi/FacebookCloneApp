@@ -11,7 +11,7 @@ class ArticlesController < ApplicationController
     @article = Article.new(article_params)
     @article.user_id = session[:user_id]
     if params[:back]
-      rener :new
+      render :new
     else
       if @article.save
         redirect_to articles_path

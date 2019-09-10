@@ -3,5 +3,4 @@ class Article < ApplicationRecord
   mount_uploader :image, ImageUploader
   validates :image, presence: true
   validates :content, presence: true
-  # validates :user_id, presence: true
 end
