@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
-  
+
+  before_action :authenticate_user, {only: [:index, :create, :new, :show, :edit, :update]}
+
   def index
     @articles = Article.all
     @user = User.find_by(params[:id])
