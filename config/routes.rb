@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get '/', to: 'users#top'
   resources :sessions, only: [:new, :create, :destroy]
   resources :users
   resources :articles do
