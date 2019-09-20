@@ -7,4 +7,7 @@ Rails.application.routes.draw do
       post :confirm
     end
   end
+  resources :blogs do
+    resources :comments
+  end
 end
