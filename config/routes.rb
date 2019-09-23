@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
   get '/', to: 'users#top'
   resources :sessions, only: [:new, :create, :destroy]
-  resources :users
+  resources :users do
+    member do
+      get :following, :followers
+    end
+  end
   resources :articles do
     collection do
       post :confirm
@@ -10,4 +14,5 @@ Rails.application.routes.draw do
   resources :blogs do
     resources :comments
   end
+  resources :relationships, only: [:create, :destroy]
 end

@@ -2,6 +2,18 @@
 
 <p>メールアドレス: <%= @user.email %></p>
 
+<p>フォローしている人！</p>
+<% @user.following.each do |f| %>
+  <%= f.name %>
+  <%= f.email %>
+<% end %>
+
+<p>フォローされている人！</p>
+<% @user.followers.each do |f| %>
+  <%= f.name %> 
+  <%= f.email %>
+<% end %>
+<hr>
 <%= link_to '新規投稿', new_article_path, class: "btn btn-primary" %>
 
 <%= link_to '投稿一覧', articles_path, class: "btn btn-primary" %>

@@ -23,6 +23,7 @@
             <%= link_to "Login", new_session_path %>
           <% end %>
         </div>
+      <li><%= link_to 'ユーザー一覧', users_path if logged_in? %></li>
       </div>
     
     <% flash.each do |key, value| %>
